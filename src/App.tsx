@@ -2,8 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
-import { increment, decrement } from './store/slice';
+import { decrement, increment } from './store/slice';
 import { RootState } from './store/store';
+import { Box, Button } from '@chakra-ui/react';
 
 function App() {
   const count: number = useSelector((state: RootState) => state.counter.value);
@@ -19,6 +20,9 @@ function App() {
 
   return (
     <div className="App">
+      <Box m={2}>
+        <Button colorScheme="blue">Button</Button>
+      </Box>
       <div>
         <a href="https://vitejs.dev">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -29,7 +33,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button data-testid="increment" onClick={() => incrementCounter()}>increment count is {count}</button>
+        <button data-testid="increment" onClick={() => incrementCounter()}>
+          increment count is {count}
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
