@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
 import { decrement, increment } from './store/slice';
 import { RootState } from './store/store';
-import { Box, Button } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
 function App() {
   const count: number = useSelector((state: RootState) => state.counter.value);
@@ -19,29 +17,15 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Box m={2}>
-        <Button colorScheme="blue">Button</Button>
-      </Box>
-      <div>
-        <a href="https://vitejs.dev">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button data-testid="increment" onClick={() => incrementCounter()}>
-          increment count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <button onClick={() => decrementCounter()}>decrement count is {count}</button>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+    <div>
+      <Button colorScheme="blue" data-testid="increment" onClick={() => incrementCounter()}>
+        {' '}
+        increment count is {count}
+      </Button>
+      <Button colorScheme="blue" data-testid="increment" onClick={() => decrementCounter()}>
+        {' '}
+        decrement count is {count}
+      </Button>
     </div>
   );
 }
