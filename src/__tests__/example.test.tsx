@@ -1,8 +1,8 @@
 import { render, renderHook, waitFor } from "@testing-library/react";
 import { Provider } from 'react-redux';
 import { expect, test } from 'vitest';
-import App from '../App';
-import store from '../store/store';
+import App from '../app/App';
+import store from '../app/store/store';
 
 // Testing component with user interaction
 test('displays title', async () => {
