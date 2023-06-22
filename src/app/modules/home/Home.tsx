@@ -1,10 +1,6 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { SignUp } from './features/sign-up/Sign-up';
 
 export function Home() {
-  return (
-    <div>
-      Home
-      <Link to="/private/dashboard">Go to Dashboard</Link>
-    </div>
-  );
+  return <SignUp></SignUp>;
 }
